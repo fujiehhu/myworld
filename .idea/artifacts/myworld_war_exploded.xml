@@ -6,6 +6,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="myworld" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.3.0" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.29" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/myworld/META-INF/MANIFEST.MF" />
