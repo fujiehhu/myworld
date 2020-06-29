@@ -10,4 +10,23 @@
        FROM
        stu
     </select>
+
+    <select id="count" resultType="Integer">
+        SELECT
+        COUNT (0) as ROW_COUNT
+        FROM
+        stu
+    </select>
+
+    <insert id="insert" parameterType="User">
+        insert into stu (ID,NAME,AGE,SEX) values (#{ID},#{NAME },#{AGE},#{SEX});
+    </insert>
+
+    <delete id="delete" parameterType="User">
+        delete from stu where ID= #{ID}
+    </delete>
+
+    <update id="update" parameterType="User">
+        update stu set NAME =#{NAME } where ID=#{ID}
+    </update>
 </mapper>

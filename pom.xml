@@ -20,6 +20,7 @@
     </properties>
 
     <dependencies>
+
         <!-- mybatis核心包 -->
         <dependency>
             <groupId>org.mybatis</groupId>

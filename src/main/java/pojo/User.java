@@ -4,12 +4,12 @@ package pojo;
  * Created by fujie on 20/6/28.
  */
 public class User {
-    private int ID;
+    private String ID;
     private String NAME;
     private String SEX;
-    private int AGE;
+    private String AGE;
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -17,7 +17,7 @@ public class User {
         this.NAME = NAME;
     }
 
-    public void setAGE(int AGE) {
+    public void setAGE(String AGE) {
         this.AGE = AGE;
     }
 
@@ -25,7 +25,7 @@ public class User {
         this.SEX = SEX;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
@@ -33,7 +33,7 @@ public class User {
         return NAME;
     }
 
-    public int getAGE() {
+    public String getAGE() {
         return AGE;
     }
 
