@@ -27,6 +27,10 @@
     </delete>
 
     <update id="update" parameterType="User">
-        update stu set NAME =#{NAME } where ID=#{ID}
+        update
+        stu
+        set
+        NAME = #{NAME }
+        where ID = #{ID}
     </update>
 </mapper>

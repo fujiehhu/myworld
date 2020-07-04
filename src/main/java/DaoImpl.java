@@ -1,5 +1,6 @@
 import Dao.BaseService;
 import Dao.IDao;
+import Utils.SequenceUtils;
 import pojo.User;
 import org.apache.ibatis.session.SqlSession;
 
@@ -27,14 +28,13 @@ public class DaoImpl extends BaseService implements IDao {
     @Override
     public void insert() throws IOException {
         User user = new User();
-        user.setID("10009990");
+        user.setID(SequenceUtils.getSequence(6));
         user.setNAME("jiejie");
         user.setAGE("11");
         user.setSEX("dd");
-//        System.out.println(user);
         SqlSession session = getBaseDao();
         session.insert("insert", user);
-//        需要手动提交
+        // 需要手动提交
         session.commit();
         listAll(session);
         //关闭session
@@ -44,11 +44,24 @@ public class DaoImpl extends BaseService implements IDao {
     @Override
     public void delete() throws IOException {
         SqlSession session = getBaseDao();
+        User user = new User();
+        user.setID("001");
+        session.delete("delete", user);
+        // 需要手动提交
+        session.commit();
+        listAll(session);
     }
 
     @Override
     public void update() throws IOException {
         SqlSession session = getBaseDao();
+        User user = new User();
+        user.setID("002");
+        user.setNAME("CMOS-中移在线");
+        session.update("update", user);
+        // 需要手动提交
+        session.commit();
+        listAll(session);
     }
 
     public void getCount() throws IOException {
@@ -67,8 +80,11 @@ public class DaoImpl extends BaseService implements IDao {
     public static void main(String[] args) throws IOException {
         DaoImpl dao = new DaoImpl();
 //        dao.getCount();
-        dao.insert();
+//        dao.insert();
+//        dao.delete();
+        dao.update();
 //        dao.select();
+//        System.out.println(SequenceUtils.getSequence(6));
     }
 }
 
