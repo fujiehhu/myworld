@@ -1,3 +1,5 @@
+package Dao.Impl;
+
 import Dao.BaseService;
 import Dao.IDao;
 import Utils.SequenceUtils;
@@ -29,9 +31,9 @@ public class DaoImpl extends BaseService implements IDao {
     public void insert() throws IOException {
         User user = new User();
         user.setID(SequenceUtils.getSequence(6));
-        user.setNAME("jiejie");
-        user.setAGE("11");
-        user.setSEX("dd");
+        user.setNAME("jiejiessas");
+        user.setAGE("1144");
+        user.setSEX("dd3333");
         SqlSession session = getBaseDao();
         session.insert("insert", user);
         // 需要手动提交
@@ -56,7 +58,7 @@ public class DaoImpl extends BaseService implements IDao {
     public void update() throws IOException {
         SqlSession session = getBaseDao();
         User user = new User();
-        user.setID("002");
+        user.setID("003");
         user.setNAME("CMOS-中移在线");
         session.update("update", user);
         // 需要手动提交
@@ -66,25 +68,29 @@ public class DaoImpl extends BaseService implements IDao {
 
     public void getCount() throws IOException {
         SqlSession session = getBaseDao();
-        int count = session.selectOne("count");
+        int count = session.insert("count");
+
         System.out.println(count);
     }
 
-    private static void listAll(SqlSession session) {
+    public void getOne() throws IOException {
+        //只能根据主键查询
+        SqlSession session = getBaseDao();
+        User user1 = new User();
+        user1.setID("003");
+//        user1.setNAME("jiejiessas");
+        User user = session.selectOne("select", user1);
+        System.out.println(user);
+
+    }
+
+    private void listAll(SqlSession session) {
         List<User> cs = session.selectList("select");
         for (User c : cs) {
             System.out.println(c);
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        DaoImpl dao = new DaoImpl();
-//        dao.getCount();
-//        dao.insert();
-//        dao.delete();
-        dao.update();
-//        dao.select();
-//        System.out.println(SequenceUtils.getSequence(6));
-    }
+
 }
 

@@ -5,32 +5,88 @@
 
 <mapper namespace="pojo">
     <select id="select" resultType="User">
-       SELECT
-       *
-       FROM
-       stu
+        SELECT
+        *
+        FROM
+        stu
+        WHERE 1=1
+        <if test="ID != null and ID != '' ">
+            AND ID LIKE concat('%', #{ID}, '%')
+        </if>
+        <if test="NAME != null and NAME != '' ">
+            AND NAME LIKE concat('%', #{NAME}, '%')
+        </if>
+        <if test="AGE != null and AGE != '' ">
+            AND AGE LIKE concat('%', #{AGE}, '%')
+        </if>
+        <if test="SEX != null and SEX != '' ">
+            AND SEX LIKE concat('%', #{SEX}, '%')
+        </if>
     </select>
 
     <select id="count" resultType="Integer">
         SELECT
-        COUNT (ID) as ROW_COUNT
+        COUNT (ID) as ID
         FROM
         stu
     </select>
 
     <insert id="insert" parameterType="User">
-        insert into stu (ID,NAME,AGE,SEX) values (#{ID},#{NAME},#{AGE},#{SEX});
+        insert into
+        stu
+        <trim prefix="(" suffix=")" suffixOverrides="">
+            <if test="ID != null and ID != ''">
+                ID,
+            </if>
+            <if test="NAME != null and NAME != ''">
+                NAME,
+            </if>
+            <if test="AGE != null and AGE != ''">
+                AGE,
+            </if>
+            <if test="SEX != null and SEX != ''">
+                SEX
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="ID != null and ID != ''">
+                #{ID},
+            </if>
+            <if test="NAME != null and NAME != ''">
+                #{NAME},
+            </if>
+            <if test="AGE != null and AGE != ''">
+                #{AGE},
+            </if>
+            <if test="SEX != null and SEX != ''">
+                #{SEX}
+            </if>
+        </trim>
     </insert>
 
     <delete id="delete" parameterType="User">
-        delete from stu where ID= #{ID}
+        delete
+        from stu
+        where
+        ID= #{ID}
     </delete>
 
     <update id="update" parameterType="User">
         update
         stu
-        set
-        NAME = #{NAME }
-        where ID = #{ID}
+        <set>
+            <if test="NAME != null and NAME != ''">
+                NAME = #{NAME},
+            </if>
+            <if test="AGE != null and AGE != ''">
+                AGE =#{AGE},
+            </if>
+            <if test="SEX != null and SEX != ''">
+                SEX= #{SEX}
+            </if>
+        </set>
+        where
+        ID = #{ID}
     </update>
+
 </mapper>
