@@ -13,13 +13,13 @@
 
     <select id="count" resultType="Integer">
         SELECT
-        COUNT (0) as ROW_COUNT
+        COUNT (ID) as ROW_COUNT
         FROM
         stu
     </select>
 
     <insert id="insert" parameterType="User">
-        insert into stu (ID,NAME,AGE,SEX) values (#{ID},#{NAME },#{AGE},#{SEX});
+        insert into stu (ID,NAME,AGE,SEX) values (#{ID},#{NAME},#{AGE},#{SEX});
     </insert>
 
     <delete id="delete" parameterType="User">
