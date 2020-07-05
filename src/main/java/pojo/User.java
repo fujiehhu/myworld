@@ -9,35 +9,35 @@ public class User {
     private String SEX;
     private String AGE;
 
-    public void setID(String ID) {
+    public void setId(String ID) {
         this.ID = ID;
     }
 
-    public void setNAME(String NAME) {
+    public void setName(String NAME) {
         this.NAME = NAME;
     }
 
-    public void setAGE(String AGE) {
+    public void setAge(String AGE) {
         this.AGE = AGE;
     }
 
-    public void setSEX(String SEX) {
+    public void setSex(String SEX) {
         this.SEX = SEX;
     }
 
-    public String getID() {
+    public String getId() {
         return ID;
     }
 
-    public String getNAME() {
+    public String getName() {
         return NAME;
     }
 
-    public String getAGE() {
+    public String getAge() {
         return AGE;
     }
 
-    public String getSEX() {
+    public String getSex() {
         return SEX;
     }
 

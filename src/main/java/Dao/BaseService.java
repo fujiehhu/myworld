@@ -7,19 +7,19 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.io.InputStream;
 
 /**
  * Created by lenovo on 20/6/29.
  */
 public class BaseService {
+    //定义读取文件名
+    private String resources = "mybatis-config.xml";
+    private SqlSessionFactory sqlSessionFactory;
+    //创建流
+    private Reader reader = null;
+    private SqlSession session;
 
     public SqlSession getBaseDao() throws IOException {
-
-        //定义读取文件名
-        String resources = "mybatis-config.xml";
-        //创建流
-        Reader reader = null;
         try {
             //读取mybatis-config.xml文件到reader对象中
             reader = Resources.getResourceAsReader(resources);
@@ -27,10 +27,10 @@ public class BaseService {
             e.printStackTrace();
         }
         //初始化mybatis,创建SqlSessionFactory类的实例
-        SqlSessionFactory sqlMapper = new SqlSessionFactoryBuilder().build(reader);
+        sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         //创建session实例
-        SqlSession session = sqlMapper.openSession();
-
+        session = sqlSessionFactory.openSession(true); //自动提交
         return session;
     }
+
 }

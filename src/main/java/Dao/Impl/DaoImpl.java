@@ -2,12 +2,12 @@ package Dao.Impl;
 
 import Dao.BaseService;
 import Dao.IDao;
-import Utils.SequenceUtils;
-import pojo.User;
 import org.apache.ibatis.session.SqlSession;
+import pojo.User;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by lenovo on 20/6/28.
@@ -15,61 +15,42 @@ import java.util.List;
 public class DaoImpl extends BaseService implements IDao {
 
     @Override
-    public void select() throws IOException {
+    public void select(Map<String, Object> params) throws IOException {
         SqlSession session = getBaseDao();
         //传入参数查询，返回结果
-        List<User> user = session.selectList("select");
+        List<User> user = session.selectList("select", params);
         //输出结果
-        for (User u : user) {
-            System.out.println(u);
-        }
-        //关闭session
+        listAll(session);
         session.close();
     }
 
     @Override
-    public void insert() throws IOException {
-        User user = new User();
-        user.setID(SequenceUtils.getSequence(6));
-        user.setNAME("jiejiessas");
-        user.setAGE("1144");
-        user.setSEX("dd3333");
+    public void insert(Map<String, Object> params) throws IOException {
         SqlSession session = getBaseDao();
-        session.insert("insert", user);
-        // 需要手动提交
-        session.commit();
+        session.insert("insert", params);
         listAll(session);
-        //关闭session
         session.close();
     }
 
     @Override
-    public void delete() throws IOException {
+    public void delete(Map<String, Object> params) throws IOException {
         SqlSession session = getBaseDao();
-        User user = new User();
-        user.setID("001");
-        session.delete("delete", user);
-        // 需要手动提交
-        session.commit();
+        session.delete("delete", params);
         listAll(session);
+        session.close();
     }
 
     @Override
-    public void update() throws IOException {
+    public void update(Map<String, Object> params) throws IOException {
         SqlSession session = getBaseDao();
-        User user = new User();
-        user.setID("003");
-        user.setNAME("CMOS-中移在线");
-        session.update("update", user);
-        // 需要手动提交
-        session.commit();
+        session.update("update", params);
         listAll(session);
+        session.close();
     }
 
     public void getCount() throws IOException {
         SqlSession session = getBaseDao();
         int count = session.insert("count");
-
         System.out.println(count);
     }
 
@@ -77,7 +58,7 @@ public class DaoImpl extends BaseService implements IDao {
         //只能根据主键查询
         SqlSession session = getBaseDao();
         User user1 = new User();
-        user1.setID("003");
+        user1.setId("003");
 //        user1.setNAME("jiejiessas");
         User user = session.selectOne("select", user1);
         System.out.println(user);
