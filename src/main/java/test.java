@@ -12,18 +12,18 @@ public class test {
         //多参数查询，参数放入 map
         Map<String, Object> params = new HashMap<>();
 //        params.put("ID", SequenceUtils.getSequence(6));
-        params.put("ID", "003");
+//        params.put("ID", "20200704171838120146");
         params.put("NAME", "千年老妖");
 //        params.put("SEX", "不男不女");
 //        params.put("AGE", "老不死的");
 
         DaoImpl dao = new DaoImpl();
-//        dao.getCount();
+        dao.getCount();
 //        dao.getOne();
 //        dao.insert(params);
-        dao.delete(params);
+//        dao.delete(params);
 //        dao.update(params);
 //        params.clear();
-//        dao.select(params);
+        dao.select(params);
     }
 }

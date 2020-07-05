@@ -9,24 +9,26 @@
         *
         FROM
         stu
-        WHERE 1=1
-        <if test="ID != null and ID != '' ">
-            AND ID LIKE concat('%', #{ID}, '%')
-        </if>
-        <if test="NAME != null and NAME != '' ">
-            AND NAME LIKE concat('%', #{NAME}, '%')
-        </if>
-        <if test="AGE != null and AGE != '' ">
-            AND AGE LIKE concat('%', #{AGE}, '%')
-        </if>
-        <if test="SEX != null and SEX != '' ">
-            AND SEX LIKE concat('%', #{SEX}, '%')
-        </if>
+        <where>
+            <if test="ID != null ">
+                and ID = #{ID}
+            </if>
+            <if test="NAME != null and NAME != '' ">
+                AND NAME LIKE concat('%', #{NAME}, '%')
+            </if>
+            <if test="AGE != null and AGE != '' ">
+                AND AGE LIKE concat('%', #{AGE}, '%')
+            </if>
+            <if test="SEX != null and SEX != '' ">
+                AND SEX LIKE concat('%', #{SEX}, '%')
+            </if>
+        </where>
+
     </select>
 
-    <select id="count" resultType="Integer">
+    <select id="count" resultType="Integer" >
         SELECT
-        COUNT (ID) as ID
+        COUNT(ID)
         FROM
         stu
     </select>
