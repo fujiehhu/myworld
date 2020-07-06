@@ -1,6 +1,9 @@
 package Dao;
 
+import pojo.User;
+
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,4 +17,10 @@ public interface IDao {
     void delete(Map<String, Object> params) throws IOException;
 
     void insert(Map<String, Object> params) throws IOException;
+
+    void getOne(Map<String, Object> params) throws IOException;
+
+    void listAll(List<User> cs);
+
+    void getCount() throws IOException;
 }

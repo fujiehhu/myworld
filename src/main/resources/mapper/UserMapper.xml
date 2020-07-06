@@ -23,10 +23,12 @@
                 AND SEX LIKE concat('%', #{SEX}, '%')
             </if>
         </where>
-
+        <if test="start!=null and count!=null">
+            LIMIT #{start},#{count}
+        </if>
     </select>
 
-    <select id="count" resultType="Integer" >
+    <select id="count" resultType="Integer">
         SELECT
         COUNT(ID)
         FROM

@@ -20,9 +20,7 @@ public class DaoImpl extends BaseService implements IDao {
     public void select(Map<String, Object> params) throws IOException {
         logger.info("【select方法】");
         SqlSession session = getBaseDao();
-        //传入参数查询，返回结果
         List<User> user = session.selectList("select", params);
-        //输出结果
         listAll(user);
         session.close();
     }
@@ -54,25 +52,26 @@ public class DaoImpl extends BaseService implements IDao {
         session.close();
     }
 
+    @Override
     public void getCount() throws IOException {
         logger.info("【getCount方法】");
         SqlSession session = getBaseDao();
         int count = session.selectOne("count");
-        logger.info("【getCount】:count = " + count);
+        System.out.println("【getCount】:count = " + count);
     }
 
-    public void getOne() throws IOException {
+    @Override
+    public void getOne(Map<String, Object> params) throws IOException {
         logger.info("【getOne方法】");
         //只能根据主键查询
         SqlSession session = getBaseDao();
-        User user1 = new User();
-        user1.setId("003");
-        User user = session.selectOne("select", user1);
+        User user = session.selectOne("select", params);
         System.out.println(user);
 
     }
 
-    private void listAll(List<User> cs) {
+    @Override
+    public void listAll(List<User> cs) {
         logger.info("【listAll方法】");
 //        List<User> cs = session.selectList("select");
         for (User c : cs) {

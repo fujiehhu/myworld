@@ -4,7 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-     <!--环境配置 -->
+    <settings>
+        <!-- 打开延迟加载的开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 将积极加载改为消息加载即按需加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <!--环境配置 -->
     <!--自动扫描com.how2java.pojo下的类型，使得在后续配置文件Category.xml中使用resultType的时候，可以直接使用Category,而不必写全com.how2java.pojo.Category-->
     <typeAliases>
         <package name="pojo"/>
@@ -14,10 +21,10 @@
             <transactionManager type="JDBC"/>
             <!-- 数据库连接相关配置 ,这里动态获取config.properties文件中的内容-->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8" />
-                <property name="username" value="root" />
-                <property name="password" value="123" />
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123"/>
             </dataSource>
         </environment>
     </environments>
