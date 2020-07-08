@@ -4,12 +4,13 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-    <package name="basicstruts" extends="struts-default">
-
+    <package name="basicstruts" extends="struts-default" >
         <action name="index">
             <result>index.jsp</result>
         </action>
-
+        <action name="showProduct" class="action.UserAction" method="show">
+            <result name="show">/modules/index.html</result>
+        </action>
     </package>
 
 </struts>
