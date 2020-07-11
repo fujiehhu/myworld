@@ -2,9 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <title>myworld</title>
 </head>
 <body>
-1qqqq
+<div id="login-box">
+
+    <div id="name">
+        <span>用户名</span>
+        <input type="text" placeholder="用户名" value="fujie" id="usrname">
+    </div>
+    <div id="passwd">
+        <span>密码</span>
+        <input type="password" placeholder="密码" value="666" id="usrpwd">
+    </div>
+    <div id="login">
+        <button>登录</button>
+    </div>
+</div>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        background-color: ghostwhite;
+    }
+
+    #login-box {
+        background-color: #10d6ff;
+        width: 500px;
+        height: 200px;
+        position: absolute;
+        left: 50%; /* 定位父级的50% */
+        top: 50%;
+        transform: translate(-50%, -50%); /*自己的50% */
+        border-radius: 20px;
+        /*display: flex;*/
+        text-align: center;
+
+    }
+
+    #name {
+        width: 100%;
+        float: left;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #passwd {
+        width: 100%;
+        float: right;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #login {
+        width: 100%;
+        float: right;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    span {
+        text-align: left;
+    }
+
+    #test {
+        font-weight: bold;
+        color: #EFEFEF;
+    }
+
+</style>
 </body>
 </html>

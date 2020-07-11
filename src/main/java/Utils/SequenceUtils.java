@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Random;
 
 /**
- * Created by lenovo on 20/7/4.
+ * Created by fujie on 20/7/4.
  */
 public class SequenceUtils {
     //获取唯一键值

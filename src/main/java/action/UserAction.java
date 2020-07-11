@@ -11,14 +11,15 @@ public class UserAction {
     public String show() {
         user = new User();
         user.setName("iphone7");
+        System.out.println(user);
         return "show";
     }
 
-    public User getProduct() {
+    public User getUser() {
         return user;
     }
 
-    public void setProduct(User user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }

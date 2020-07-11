@@ -12,6 +12,10 @@
         <action name="showProduct" class="action.UserAction" method="show">
             <result name="show">/modules/index.html</result>
         </action>
+
+        <action name="login" class="action.LoginAction" method="login">
+            <result name="login_success">/modules/login_success.html</result>
+        </action>
     </package>
 
 </struts>

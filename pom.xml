@@ -128,6 +128,7 @@
                     <artifactId>jetty-maven-plugin</artifactId>
                     <version>9.2.1.v20140609</version>
                     <configuration>
+                        <reload>automatic</reload>
                         <scanIntervalSeconds>10</scanIntervalSeconds>
                     </configuration>
                 </plugin>
