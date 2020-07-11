@@ -122,16 +122,13 @@
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.8.2</version>
                 </plugin>
+
                 <plugin>
-                    <groupId>org.mortbay.jetty</groupId>
-                    <artifactId>maven-jetty-plugin</artifactId>
-                    <version>6.0.0</version>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>9.2.1.v20140609</version>
                     <configuration>
                         <scanIntervalSeconds>10</scanIntervalSeconds>
-                        <!--<port>28090</port>-->
-                        <webAppConfig>
-                            <contextPath>/myworld</contextPath><!--添加为项目名称即可-->
-                        </webAppConfig>
                     </configuration>
                 </plugin>
             </plugins>

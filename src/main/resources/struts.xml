@@ -4,10 +4,11 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-    <package name="basicstruts" extends="struts-default" >
-        <action name="index">
-            <result>index.jsp</result>
-        </action>
+    <package name="basicstruts" namespace="/" extends="struts-default">
+        <!--struts2设置默认首页-->
+        <default-action-ref name="showProduct"/>
+
+
         <action name="showProduct" class="action.UserAction" method="show">
             <result name="show">/modules/index.html</result>
         </action>
