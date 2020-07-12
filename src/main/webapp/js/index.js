@@ -14,13 +14,18 @@ $(function () {
                 console.log(result);
             }
         });
-        $.ajax({
-            url: "../login", data: paras, success: function (result) {
-                // $("#div1").html(result);
-                // alert("向后台传数据")
-                console.log(result);
-            }
-        });
+        // $.ajax({
+        //     type: "POST",
+        //     url: "/user_checkusername.action", data: "username=zhangsan",
+        //     dataType: 'text',
+        //     success: function (data) {
+        //         alert(data);
+        //     },
+        //     error: function () {
+        //         alert("出错了");
+        //     }
+        //
+        // });
     });
 
 

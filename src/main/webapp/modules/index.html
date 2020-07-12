@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="../js/index.js"></script>
@@ -9,18 +12,21 @@
 </head>
 <body>
 <div id="login-box">
+    <form action="login.action">
+        <div id="name">
+            <span>用户名</span>
+            <input type="text" placeholder="用户名" id="usrname">
+        </div>
+        <div id="passwd">
+            <span>密码</span>
+            <input type="password" placeholder="密码" id="usrpwd">
+        </div>
+        <div id="login">
+            <!--<input type="submit" value="submit">-->
+            <button>登录</button>
+        </div>
+    </form>
 
-    <div id="name">
-        <span>用户名</span>
-        <input type="text" placeholder="用户名" value="fujie" id="usrname">
-    </div>
-    <div id="passwd">
-        <span>密码</span>
-        <input type="password" placeholder="密码" value="666" id="usrpwd">
-    </div>
-    <div id="login">
-        <button>登录</button>
-    </div>
 </div>
 <style>
     * {
