@@ -21,6 +21,7 @@
             <result name="login_success" type="redirect">modules/login_success.html</result>
             <result name="login_error" type="redirectAction">login_error</result>
             <result name="login_register" type="redirect">modules/login_register.html</result>
+            <!--type="redirect"配置客户端跳转-->
         </action>
 
         <action name="user_*" class="action.LoginAction" method="{1}">

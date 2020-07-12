@@ -44,7 +44,6 @@ public class LoginAction {
         }
     }
 
-//    }
 
     public Login getLogin() {
         return login;
