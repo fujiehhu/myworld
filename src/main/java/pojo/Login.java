@@ -7,6 +7,7 @@ public class Login {
     private String ID;
     private String NAME;
     private String PWD;
+//    private String flag; //1 登录 2 注册
 
     public String getID() {
         return ID;
@@ -31,6 +32,14 @@ public class Login {
     public void setNAME(String NAME) {
         this.NAME = NAME;
     }
+
+//    public String getFlag() {
+//        return flag;
+//    }
+//
+//    public void setFlag(String flag) {
+//        this.flag = flag;
+//    }
 
     @Override
     public String toString() {

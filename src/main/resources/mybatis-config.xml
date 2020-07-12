@@ -32,6 +32,7 @@
     <!-- mapping文件路径配置 -->
     <mappers>
         <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/LoginMapper.xml"/>
     </mappers>
 
 </configuration>

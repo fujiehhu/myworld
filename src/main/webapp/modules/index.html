@@ -15,18 +15,24 @@
     <form action="login.action">
         <div id="name">
             <span>用户名</span>
-            <input type="text" placeholder="用户名" id="usrname">
+            <input type="text" placeholder="用户名" id="usrname" name="login.NAME">
         </div>
         <div id="passwd">
             <span>密码</span>
-            <input type="password" placeholder="密码" id="usrpwd">
+            <input type="password" placeholder="密码" id="usrpwd" name="login.PWD">
         </div>
+
         <div id="login">
             <!--<input type="submit" value="submit">-->
-            <button>登录</button>
+            <!--<button>登录</button>-->
+            <input type="submit" value="登录">
+            <input type="submit" value="注册" name="login.flag">
         </div>
     </form>
-
+    <!--<div id="login">-->
+    <!--<input type="submit" value="submit">-->
+    <!--<button>登录</button>-->
+    <!--</div>-->
 </div>
 <style>
     * {
