@@ -2,6 +2,8 @@ package action;
 
 import Dao.Impl.LoginImpl;
 import org.apache.log4j.Logger;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pojo.Login;
 
 import java.io.IOException;
@@ -14,6 +16,10 @@ import java.util.Map;
 public class LoginAction {
     private Logger logger = Logger.getLogger(LoginAction.class);
     private Login login;
+    ApplicationContext context = new ClassPathXmlApplicationContext(
+            new String[]{"applicationContext.xml"});
+
+//    Login login = (Login) context.getBean("login");
 
     public String checkusername() throws IOException {
         logger.info("【checkusername方法】");

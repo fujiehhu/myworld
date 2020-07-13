@@ -4,6 +4,9 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+
+    <constant name="struts.objectFactory" value="spring"/>
+
     <package name="basicstruts" namespace="/" extends="struts-default">
         <!--struts2设置默认首页-->
         <default-action-ref name="home"/>
