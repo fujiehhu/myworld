@@ -4,14 +4,12 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-
     <constant name="struts.objectFactory" value="spring"/>
 
     <package name="basicstruts" namespace="/" extends="struts-default">
+
         <!--struts2设置默认首页-->
         <default-action-ref name="home"/>
-
-
         <action name="home">
             <result>/modules/index.html</result>
         </action>
@@ -19,7 +17,7 @@
             <result>modules/login_error.html</result>
         </action>
 
-        <action name="login" class="action.LoginAction" method="checkusername">
+        <action name="login" class="loginAction" method="checkusername">
             <!--<result name="login_success" type="redirect">modules/login_success.html</result>-->
             <result name="login_success" type="redirect">modules/login_success.html</result>
             <result name="login_error" type="redirectAction">login_error</result>
@@ -27,9 +25,9 @@
             <!--type="redirect"配置客户端跳转-->
         </action>
 
-        <action name="user_*" class="action.LoginAction" method="{1}">
-            <result name="isExist" type="redirect">modules/login_success.html</result>
-        </action>
+        <!--<action name="user_*" class="action.LoginAction" method="{1}">-->
+        <!--<result name="isExist" type="redirect">modules/login_success.html</result>-->
+        <!--</action>-->
 
 
     </package>
