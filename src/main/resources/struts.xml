@@ -17,7 +17,7 @@
             <result>modules/login_error.html</result>
         </action>
 
-        <action name="login" class="loginAction" method="checkusername">
+        <action name="login" class="loginActionService" method="checkusername">
             <!--<result name="login_success" type="redirect">modules/login_success.html</result>-->
             <result name="login_success" type="redirect">modules/login_success.html</result>
             <result name="login_error" type="redirectAction">login_error</result>

@@ -1,7 +1,7 @@
-package Dao.Impl;
+package dao.Impl;
 
-import Dao.BaseService;
-import Dao.ILogin;
+import dao.BaseService;
+import dao.ILogin;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 import pojo.User;

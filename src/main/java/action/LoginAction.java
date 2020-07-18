@@ -1,6 +1,6 @@
 package action;
 
-import Dao.Impl.LoginImpl;
+import dao.Impl.LoginImpl;
 import org.apache.log4j.Logger;
 import pojo.Login;
 
