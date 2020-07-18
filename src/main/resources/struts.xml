@@ -11,17 +11,17 @@
         <!--struts2设置默认首页-->
         <default-action-ref name="home"/>
         <action name="home">
-            <result>/modules/index.html</result>
+            <result>/src/modules/index.html</result>
         </action>
         <action name="login_error">
-            <result>modules/login_error.html</result>
+            <result>src/modules/login_error.html</result>
         </action>
 
         <action name="login" class="loginActionService" method="checkusername">
             <!--<result name="login_success" type="redirect">modules/login_success.html</result>-->
-            <result name="login_success" type="redirect">modules/login_success.html</result>
+            <result name="login_success" type="redirect">src/modules/login_success.html</result>
             <result name="login_error" type="redirectAction">login_error</result>
-            <result name="login_register" type="redirect">modules/login_register.html</result>
+            <result name="login_register" type="redirect">src/modules/login_register.html</result>
             <!--type="redirect"配置客户端跳转-->
         </action>
 

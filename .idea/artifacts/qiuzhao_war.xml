@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="qiuzhao:war">
+    <output-path>$PROJECT_DIR$/../qiuzhao/target</output-path>
+    <root id="archive" name="myworld.war">
+      <element id="artifact" artifact-name="qiuzhao:war exploded" />
+    </root>
+  </artifact>
+</component>
