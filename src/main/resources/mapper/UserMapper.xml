@@ -23,6 +23,8 @@
                 AND SEX LIKE concat('%', #{SEX}, '%')
             </if>
         </where>
+        ORDER BY
+        ID DESC
         <if test="start!=null and count!=null">
             LIMIT #{start},#{count}
         </if>
@@ -57,7 +59,7 @@
                 #{ID},
             </if>
             <if test="NAME != null and NAME != ''">
-                #{NAME},
+                ${NAME},
             </if>
             <if test="AGE != null and AGE != ''">
                 #{AGE},

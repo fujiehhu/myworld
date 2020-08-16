@@ -27,7 +27,6 @@ public class LoginAction {
         int res = dao.checkUser(params); // 1 存在 0 不存在
 
 //        String flag = login.getFlag();
-//        TODO 注册功能
 //        if (flag.equals("2")) {
 //            logger.info("【checkusername方法】-- 注册");
 //            return "login_register";

@@ -10,6 +10,7 @@
         <!-- 将积极加载改为消息加载即按需加载 -->
         <setting name="aggressiveLazyLoading" value="false"/>
         <setting name="cacheEnabled" value="true"/>
+        <setting name="logImpl" value="LOG4J" />
     </settings>
     <!--环境配置 -->
     <!--自动扫描com.how2java.pojo下的类型，使得在后续配置文件Category.xml中使用resultType的时候，可以直接使用Category,而不必写全com.how2java.pojo.Category-->

@@ -52,13 +52,13 @@ public class FilepathUtils {
      * @throws Exception
      */
     public static String getEncode(String content) throws Exception {
-        String mkdir = "./src/main/webapp/src/assets/";
+        String mkdir = "./src/main/webapp/data/assets/";
         File f = new File(mkdir);
         if (!f.exists())
             f.mkdirs();
         String string = UUIDUtils.getQRCodePath();
 //        String path = mkdir + string + ".jpg";
-        String path = mkdir + "1" + ".jpg";
+        String path = mkdir + "2" + ".jpg";
         int width = 100; // 图像宽度
         int height = 100; // 图像高度
         String format = "jpg";// 图像类型
