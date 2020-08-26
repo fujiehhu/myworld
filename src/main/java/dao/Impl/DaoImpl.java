@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import pojo.User;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,6 +35,13 @@ public class DaoImpl extends BaseService implements IDao {
         session.close();
     }
 
+    public void insert(List params) throws IOException {
+        logger.info("【insert方法】");
+        SqlSession session = getBaseDao();
+        session.insert("insertUser", params);
+//        listAll(session);
+        session.close();
+    }
     @Override
     public void delete(Map<String, Object> params) throws IOException {
         logger.info("【delete方法】");
@@ -77,6 +85,9 @@ public class DaoImpl extends BaseService implements IDao {
         for (User c : cs) {
             System.out.println(c);
         }
+//        for(HashMap<> hs:cs){
+//
+//        }
     }
 
 }

@@ -22,8 +22,8 @@ public class SequenceUtils {
         for (int i = 0; i < length; i++) {
             rs.append(r.nextInt(10));
         }
-        return "" + rs;
-//        return res + rs;
+//        return "" + rs;
+        return res + rs;
 
     }
 }

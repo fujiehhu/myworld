@@ -2,6 +2,7 @@ import dao.Impl.DaoImpl;
 import utils.SequenceUtils;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,17 +12,20 @@ import java.util.Map;
 public class test {
     public static void main(String[] args) throws IOException {
         //多参数查询，参数放入 map
-        Map<String, Object> params = new HashMap<>();
-        params.put("ID", SequenceUtils.getSequence(6));
-//        params.put("ID", "20200704171838120146");
-        params.put("NAME", "'千年老san'");
-        params.put("SEX", "man");
-        params.put("AGE", "21");
-
         DaoImpl dao = new DaoImpl();
+        ArrayList<Map<String, Object>> maps = new ArrayList<>();
+        for (int i = 0; i < 10000; i++) {
+            Map<String, Object> params = new HashMap<>();
+            params.put("ID", i);
+            params.put("PWD", Math.round(Math.random() * 100 % 50) + "");
+            params.put("NAME", "man");
+            maps.add(params);
+
+        }
+        dao.insert(maps);
 //        dao.getCount();
 //        dao.getOne();
-        dao.insert(params);
+
 //        dao.delete(params);
 //        dao.update(params);
 //        params.clear();
@@ -36,9 +40,10 @@ public class test {
 //        params.put("ID","20200706214426776800");
 //        params.put("count",5);
 //        dao.getOne(params);
-//        Map<String, Object> params1 = new HashMap<>();
-//        params1.put("NAME", "千年");
+        Map<String, Object> params1 = new HashMap<>();
+        params1.put("start", "0");
+        params1.put("count", "2");
 //        dao.select(params1);
-        dao.select(null);
+//        dao.select(params1);
     }
 }
